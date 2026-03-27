@@ -1,40 +1,22 @@
 # The Site Configuration
-
-# Import the theme
 theme: jekyll-theme-chirpy
-
-# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
-# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
-# otherwise, the layout language will use the default value of 'en'.
 lang: en
-
-# Change to your timezone › https://zones.arilyn.cc
 timezone: Asia/Hong_Kong
 
-# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-# ↓ --------------------------
-
+# 這裡就是之前出錯的地方，我已經加了空格
 title: "KwanLam's Daily"
-
 tagline: "音樂、數位與生活的碎片"
-
 description: "這是一個關於音樂與數位的個人部落格"
 
-# Fill in the protocol & hostname for your site.
-# E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: 'https://kwanlam.cc'
 
 github:
   username: kwanlam08
   
 social:
-  # Change to your full name.
-  # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Kwanlam Ng
-  email: me@kwanlam.cc # change to your email address
-  fediverse_handle: # fill in your fediverse handle. E.g. "@username@domain.com"
+  email: me@kwanlam.cc
   links:
-    # The first element serves as the copyright owner's link
     - https://github.com/Kwanlam08
 
 # Web Analytics Settings
