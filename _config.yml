@@ -14,9 +14,9 @@ timezone: Asia/Hong_Kong
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title:"KwanLam's Daily"
+title: "KwanLam's Daily"
 
-tagline:"音樂、數位與生活的碎片"
+tagline: "音樂、數位與生活的碎片"
 
 description: "這是一個關於音樂與數位的個人部落格"
 
