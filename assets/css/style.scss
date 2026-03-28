@@ -1,40 +1,37 @@
 ---
 ---
-:root {
-  /* 羊皮紙色 (淺米黃) */
-  --main-wrapper-bg: #f4ecd8 !important;
-  /* 側邊欄顏色也稍微調和，讓整體更統一 */
-  --sidebar-bg: #eaddca !important;
-  /* 文字顏色調成深古銅色，比純黑更柔和 */
-  --text-color: #43341b !important;
-  /* 連結顏色換成復古紅或深藍 */
-  --link-color: #8c2727 !important;
+
+/* 1. 只針對背景進行精準染色，不破壞導航欄佈局 */
+html, body, #main-wrapper {
+  background-color: #f4ecd8 !important;
+  background-image: none !important;
 }
 
-/* 2. 字體設置：宋體 + 新羅馬 */
-body {
-  background-color: var(--main-wrapper-bg) !important;
+/* 2. 針對側邊欄和頂部導航優化，防止擠在一起 */
+#sidebar, #topbar-wrapper {
+  background-color: #eaddca !important;
+}
+
+/* 3. 宋體與新羅馬設置，只針對正文和標題 */
+body, #main-wrapper {
   font-family: "Times New Roman", "Source Serif Pro", "Noto Serif SC", "SimSun", "STSong", serif !important;
-  color: var(--text-color) !important;
+  color: #43341b !important;
 }
 
-/* 3. 文章正文優化 */
+/* 4. 修復導航文字和圖標排版 */
+.nav-item, .sidebar-bottom, .post-content {
+  font-family: inherit;
+}
+
+/* 5. 確保文章內容清晰 */
 .post-content {
-  font-family: "Times New Roman", "Source Serif Pro", "Noto Serif SC", "SimSun", "STSong", serif !important;
-  font-size: 1.1rem; /* 宋體建議稍微大一點才清晰 */
+  font-size: 1.1rem;
   line-height: 1.8;
-  letter-spacing: 0.02em; /* 字間距稍微拉開一點更有質感 */
+  letter-spacing: 0.01em;
 }
 
-/* 4. 標題優化 */
-h1, h2, h3, h4 {
-  font-family: "Times New Roman", "Source Serif Pro", "Noto Serif SC", "SimSun", "STSong", serif !important;
-  color: #5d4037 !important; /* 標題用深褐色 */
-}
-
-/* 5. 去除一些現代感的陰影，讓它更像紙張 */
-.post, .card {
-  box-shadow: none !important;
-  border-bottom: 1px solid rgba(0,0,0,0.1) !important;
-  background-color: transparent !important;
+/* 6. 強制修正你截圖中那個「排版錯位」的問題 */
+#main-wrapper {
+  display: flex;
+  flex-direction: column;
 }
