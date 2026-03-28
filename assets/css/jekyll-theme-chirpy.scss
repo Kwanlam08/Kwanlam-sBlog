@@ -2,19 +2,20 @@
 ---
 @use 'main' {%- if jekyll.environment == 'production' -%} .bundle {%- endif -%};
 
-/* 1. 替換官方預設的字體變數 */
+/* 1. 替換官方字體變數，加入蘋果繁體 (Songti TC) 與 Windows 繁體 (PMingLiU) */
 :root {
-  --font-sans: "Times New Roman", "Songti SC", "STSong", "SimSun", serif !important;
-  --font-serif: "Times New Roman", "Songti SC", "STSong", "SimSun", serif !important;
+  --font-sans: "Times New Roman", "Songti TC", "PMingLiU", "Songti SC", "STSong", "SimSun", serif !important;
+  --font-serif: "Times New Roman", "Songti TC", "PMingLiU", "Songti SC", "STSong", "SimSun", serif !important;
 }
 
-/* 2. 確保所有文字都套用新字體 */
-body, .post-content, .post-title, h1, h2, h3, h4, h5, h6, p, a, span, li {
+/* 2. 強制全局套用新羅馬與宋體 */
+body, .post-content, .post-title, h1, h2, h3, h4, h5, h6, p, a, span, li, div {
   font-family: var(--font-sans) !important;
 }
 
-/* 3. 稍微調大一點正文，讓手機上的宋體更易讀 */
+/* 3. 宋體偏細，微調字號與行距讓手機閱讀更舒服 */
 .post-content p {
   font-size: 1.1rem !important;
   letter-spacing: 0.02em !important;
+  line-height: 1.8 !important;
 }
