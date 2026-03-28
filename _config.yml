@@ -1,3 +1,9 @@
+# 設置頭像
+avatar:
+  type: img # 設置類型為圖片
+  path: /assets/img/IMG_5430.jpg # 您圖片在 assets/img/ 下的具體路徑
+  alt: "KwanLam's Daily" # 頭像的替代文本，建議與您的部落格標題一致
+
 theme: jekyll-theme-chirpy
 lang: en
 timezone: Asia/Hong_Kong
