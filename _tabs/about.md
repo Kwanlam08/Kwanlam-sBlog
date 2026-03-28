@@ -14,9 +14,9 @@ order: 1
 
 ### 🎧 音樂清單 (Music Taste)
 作為一名 K-pop 愛好者，我的耳機裡經常循環著：
-* **NCT 127** & **WayV** * 以及更多觸動靈魂的旋律。
-當然也會聽國際流行: Ariana Grande,Taylor Swift...
-有時候也聽 Alternative 
+* **NCT 127** & **WayV**
+* 以及更多觸動靈魂的旋律。
+
 如果你也喜歡這些頻率，歡迎隨時跟我交流。
 
 ---
@@ -31,9 +31,9 @@ order: 1
 如果你有任何想法，可以透過以下方式找到我：
 * **Email**: [me@kwanlam.cc](mailto:me@kwanlam.cc)
 * **GitHub**: [Kwanlam08](https://github.com/Kwanlam08)
-* **WeChat**: [NG_Kwan-Lam]
+
 ---
 
-{% img /assets/img/posts/your-avatar.jpg "KwanLam's Daily" %}
-*寫於 2026 年春*
+![KwanLam's Daily](/assets/img/posts/your-avatar.jpg)
 
+*寫於 2026 年春*
