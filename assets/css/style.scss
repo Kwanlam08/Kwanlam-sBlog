@@ -1,37 +1,36 @@
 ---
 ---
+@import 'main';
 
-/* 1. 只針對背景進行精準染色，不破壞導航欄佈局 */
-html, body, #main-wrapper {
-  background-color: #f4ecd8 !important;
-  background-image: none !important;
+/* --- 以下是自定義羊皮紙與宋體樣式 --- */
+
+/* 1. 替換主題的全局顏色變量 */
+:root {
+  --main-bg: #f4ecd8 !important;         /* 羊皮紙主背景 */
+  --sidebar-bg: #eaddca !important;      /* 側邊欄稍深一點的羊皮紙色 */
+  --text-color: #43341b !important;      /* 深褐色文字 */
+  --heading-color: #5d4037 !important;   /* 標題顏色 */
 }
 
-/* 2. 針對側邊欄和頂部導航優化，防止擠在一起 */
-#sidebar, #topbar-wrapper {
-  background-color: #eaddca !important;
+/* 2. 確保在明亮模式下生效 */
+[data-theme="light"] {
+  --main-bg: #f4ecd8 !important;
+  --sidebar-bg: #eaddca !important;
 }
 
-/* 3. 宋體與新羅馬設置，只針對正文和標題 */
-body, #main-wrapper {
+/* 3. 強制替換全局字體為宋體/新羅馬 */
+body {
   font-family: "Times New Roman", "Source Serif Pro", "Noto Serif SC", "SimSun", "STSong", serif !important;
-  color: #43341b !important;
+  background-color: var(--main-bg) !important;
 }
 
-/* 4. 修復導航文字和圖標排版 */
-.nav-item, .sidebar-bottom, .post-content {
-  font-family: inherit;
-}
-
-/* 5. 確保文章內容清晰 */
+/* 4. 優化正文和標題顯示 */
 .post-content {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  letter-spacing: 0.01em;
+  font-family: "Times New Roman", "Source Serif Pro", "Noto Serif SC", "SimSun", "STSong", serif !important;
+  font-size: 1.05rem; /* 微調字號讓宋體更易讀 */
 }
 
-/* 6. 強制修正你截圖中那個「排版錯位」的問題 */
-#main-wrapper {
-  display: flex;
-  flex-direction: column;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Times New Roman", "Source Serif Pro", "Noto Serif SC", "SimSun", "STSong", serif !important;
+  color: var(--heading-color) !important;
 }
