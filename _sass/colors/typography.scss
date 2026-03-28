@@ -1,0 +1,9 @@
+/* 強制定義 Chirpy 的字體變量 */
+$font-family-sans-serif: "Times New Roman", "Songti SC", "STSong", "SimSun", serif !default;
+$font-family-serif: "Times New Roman", "Songti SC", "STSong", "SimSun", serif !default;
+$font-family-base: $font-family-sans-serif !default;
+
+/* 強制讓所有元素認領這個字體 */
+* {
+  font-family: "Times New Roman", "Songti SC", "STSong", "SimSun", serif !important;
+}
