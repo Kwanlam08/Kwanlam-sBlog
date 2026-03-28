@@ -2,35 +2,18 @@
 ---
 @import 'main';
 
-/* --- 以下是自定義羊皮紙與宋體樣式 --- */
-
-/* 1. 替換主題的全局顏色變量 */
+/* 1. 直接替換 Chirpy 底層的字體變量 */
 :root {
-  --main-bg: #f4ecd8 !important;         /* 羊皮紙主背景 */
-  --sidebar-bg: #eaddca !important;      /* 側邊欄稍深一點的羊皮紙色 */
-  --text-color: #43341b !important;      /* 深褐色文字 */
-  --heading-color: #5d4037 !important;   /* 標題顏色 */
+  --font-sans: "Times New Roman", "Source Serif Pro", "Noto Serif SC", "SimSun", "STSong", serif !important;
+  --font-serif: "Times New Roman", "Source Serif Pro", "Noto Serif SC", "SimSun", "STSong", serif !important;
 }
 
-/* 2. 確保在明亮模式下生效 */
-[data-theme="light"] {
-  --main-bg: #f4ecd8 !important;
-  --sidebar-bg: #eaddca !important;
-}
-
-/* 3. 強制替換全局字體為宋體/新羅馬 */
-body {
+/* 2. 強制正文、標題、導航欄全部使用新字體 */
+body, .post-content, .post-title, h1, h2, h3, h4, h5, h6, a, p, span {
   font-family: "Times New Roman", "Source Serif Pro", "Noto Serif SC", "SimSun", "STSong", serif !important;
-  background-color: var(--main-bg) !important;
 }
 
-/* 4. 優化正文和標題顯示 */
-.post-content {
-  font-family: "Times New Roman", "Source Serif Pro", "Noto Serif SC", "SimSun", "STSong", serif !important;
-  font-size: 1.05rem; /* 微調字號讓宋體更易讀 */
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Times New Roman", "Source Serif Pro", "Noto Serif SC", "SimSun", "STSong", serif !important;
-  color: var(--heading-color) !important;
+/* 3. 稍微調大一點正文字號，因為宋體偏細，放大一點在手機上才好讀 */
+.post-content p {
+  font-size: 1.1rem !important;
 }
