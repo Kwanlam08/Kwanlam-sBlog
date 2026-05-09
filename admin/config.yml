@@ -27,8 +27,18 @@ collections:
           - {label: "點擊上傳圖片", name: "path", widget: "image", required: false}
           - {label: "圖片描述", name: "alt", widget: "string", required: false}
       - {label: "在這裡寫正文...", name: "body", widget: "markdown"}
-backend:
-  name: github
-  repo: Kwanlam08/Kwanlam-sBlog
-  branch: main
-  base_url: "https://cms-auth.junlinwu0811.workers.dev/"
+  # 這是新增的單獨頁面區塊
+  - name: "pages"
+    label: "固定頁面 (Pages)"
+    files:
+      - label: "關於我 / Profile"
+        name: "profile"
+        # ⚠️ 注意：這裡的路徑必須對應你 GitHub 裡真實的檔案位置！
+        # Chirpy 主題通常放在 _tabs 資料夾下，檔名可能是 about.md
+        file: "_tabs/about.md" 
+        fields:
+          - {label: "頁面標題", name: "title", widget: "string"}
+          - {label: "選單圖示 (可不填)", name: "icon", widget: "string", required: false}
+          - {label: "排序 (可不填)", name: "order", widget: "number", required: false}
+          - {label: "內容正文", name: "body", widget: "markdown"}
+
