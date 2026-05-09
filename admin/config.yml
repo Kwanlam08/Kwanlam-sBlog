@@ -27,3 +27,8 @@ collections:
           - {label: "點擊上傳圖片", name: "path", widget: "image", required: false}
           - {label: "圖片描述", name: "alt", widget: "string", required: false}
       - {label: "在這裡寫正文...", name: "body", widget: "markdown"}
+backend:
+  name: github
+  repo: Kwanlam08/Kwanlam-sBlog
+  branch: main
+  base_url: "https://cms-auth.junlinwu0811.workers.dev/"
