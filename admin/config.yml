@@ -41,4 +41,16 @@ collections:
           - {label: "選單圖示 (可不填)", name: "icon", widget: "string", required: false}
           - {label: "排序 (可不填)", name: "order", widget: "number", required: false}
           - {label: "內容正文", name: "body", widget: "markdown"}
+  # 這是用來管理網站全域設定的區塊
+  - name: "settings"
+    label: "網站設定 (Settings)"
+    files:
+      - label: "側邊欄與基本資訊"
+        name: "config"
+        file: "_config.yml"
+        fields:
+          - {label: "網站標題 (Site Title)", name: "title", widget: "string"}
+          - {label: "網站副標題 (Tagline)", name: "tagline", widget: "string"}
+          - {label: "側邊欄大頭貼 (Avatar)", name: "avatar", widget: "image"}
+          - {label: "網站描述 (Description)", name: "description", widget: "string"}
 
