@@ -15,12 +15,12 @@ layout: page
 
 ### 🎧 音樂清單 (Music Taste)
 
-* **K-POP**
+- **K-POP**
     - NCT
     - RIIZE
     - Hearts2Hearts
     - and more…
-* **POP**
+- **POP**
     - Ariana Grande
     - Troye Sivan
     - Sabrina Carpenter
@@ -28,10 +28,10 @@ layout: page
     - Lady Gaga
     - Bruno Mars
     - and more…
-* Alternative
+- Alternative
     - HONNE
     - Djo
-* CPOP
+- CPOP
     - Gareth.T
     - Terence Lam
     - and more…
