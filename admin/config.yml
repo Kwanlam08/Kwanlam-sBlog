@@ -2,8 +2,7 @@ backend:
   name: github
   repo: Kwanlam08/Kwanlam-sBlog
   branch: main
-  auth_type: pkce
-  app_id: Ov23lioLKAmf8QzN6mvK
+  base_url: "https://cms-auth.junlinwu0811.workers.dev"
 
 # 讓後台自動處理圖片路徑
 media_folder: "assets/img/posts"
