@@ -1,7 +1,7 @@
 backend:
   name: github
   # ⚠️ 注意：這裡的用戶名和倉庫名必須與你 GitHub 上的完全一致
-  repo: Kwanlam08/Kwanlam-sBlog
+  repo: [https://api.github.com/repos/Kwanlam08/Kwanlam-sBlog](https://api.github.com/repos/Kwanlam08/Kwanlam-sBlog))
   branch: main # 如果你的預設分支叫 master，請改成 master
 
 # 讓你上傳的圖片自動存進這個資料夾
