@@ -1,10 +1,11 @@
 backend:
   name: github
-  # ⚠️ 注意：這裡的用戶名和倉庫名必須與你 GitHub 上的完全一致
   repo: Kwanlam08/Kwanlam-sBlog
-  branch: main # 如果你的預設分支叫 master，請改成 master
+  branch: main
+  auth_type: pkce
+  app_id: Ov23lioLKAmf8QzN6mvK
 
-# 讓你上傳的圖片自動存進這個資料夾
+# 讓後台自動處理圖片路徑
 media_folder: "assets/img/posts"
 public_folder: "/assets/img/posts"
 
@@ -13,7 +14,6 @@ collections:
     label: "發佈新文章"
     folder: "_posts"
     create: true
-    # 自動幫你生成 "2026-03-29-標題.md" 這種標準檔名
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "文章標題 (Title)", name: "title", widget: "string"}
