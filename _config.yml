@@ -1,52 +1,39 @@
-# 設置頭像
-avatar:
-  type: img # 設置類型為圖片
-  path: /assets/img/IMG_5430.jpeg # 您圖片在 assets/img/ 下的具體路徑
-  alt: "KwanLam's Daily" # 頭像的替代文本，建議與您的部落格標題一致
-
+title: KwanLam's Daily
+tagline: 音樂、數位與生活的碎片
+avatar: /assets/img/posts/IMG_2504.jpeg
+description: 這是一個關於音樂與數位的個人部落格
+defaults:
+  - values:
+      permalink: /posts/:title/
+      toc: true
+      comments: true
+      layout: post
+    scope:
+      type: posts
+      path: ''
+  - values:
+      permalink: /:title/
+      layout: page
+    scope:
+      type: tabs
+      path: ''
+collections:
+  tabs:
+    sort_by: order
+    output: true
+kramdown:
+  syntax_highlighter: rouge
+  footnote_backlink: '&#8617;&#xfe0e;'
+github:
+  username: kwanlam08
 theme: jekyll-theme-chirpy
 lang: en
 timezone: Asia/Hong_Kong
-
-title: "KwanLam's Daily"
-tagline: "音樂、數位與生活的碎片"
-description: "這是一個關於音樂與數位的個人部落格"
-url: 'https://kwanlam.cc'
-
-github:
-  username: kwanlam08
-
+url: https://kwanlam.cc
 social:
   name: Kwanlam Ng
   email: me@kwanlam.cc
   links:
     - https://github.com/Kwanlam08
-
 paginate: 10
-baseurl: ""
-
-# 保持默認配置
-kramdown:
-  footnote_backlink: "&#8617;&#xfe0e;"
-  syntax_highlighter: rouge
-
-collections:
-  tabs:
-    output: true
-    sort_by: order
-
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-      comments: true
-      toc: true
-      permalink: /posts/:title/
-  - scope:
-      path: ""
-      type: tabs
-    values:
-      layout: page
-      permalink: /:title/
+baseurl: ''
