@@ -1,54 +1,27 @@
 ---
-# Jekyll 主題必須保留這兩行連字號，否則 CSS 不會生效
+# 必须保留这两行，Jekyll 才会编译
 ---
 
-/* Kwanlam's Blog - 全域宋體強化方案
-  適用於：簡繁中文全平台、iOS、Android、Windows
-*/
+@import "main";
 
-@import "main"; // 保持主題原有的基礎樣式導入
+/* 1. 从 Google Fonts 云端引入「思源宋体」，无视系统本地是否缺少字库 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
 
-/* --- 全域字體強制覆蓋 --- */
-html, body, 
-h1, h2, h3, h4, h5, h6, 
-p, a, span, div, li, 
-input, textarea, button,
-.post-content, .post-title, .site-title, .site-subtitle {
-    font-family: 
-        /* 1. 蘋果系統 (macOS/iOS) - 最優雅的宋體 */
-        "Songti SC", "STSong", "Songti TC", "Apple LiSung", 
-        /* 2. 雲端/開源字體備份 (思源宋體) */
-        "Noto Serif SC", "Noto Serif TC", 
-        /* 3. Windows 系統 (簡中宋體 & 繁中新細明體) */
-        "SimSun", "NSimSun", "PMingLiU", "MingLiU", 
-        /* 4. 系統底層襯線體 */
-        serif !important;
+/* 2. 拦截并替换 Chirpy 主题的底层字体变量 */
+:root {
+    --font-family-main: 'Noto Serif SC', "Songti SC", "STSong", "PMingLiU", "SimSun", serif !important;
+    --font-family-heading: var(--font-family-main) !important;
 }
 
-/* --- 視覺美化調優 (打造富士膠片/雜誌感) --- */
+/* 3. 强制覆盖全域元素，同时避开破坏 icon 和 代码块 */
+body, h1, h2, h3, h4, h5, h6, p, a, span, div, li, textarea, input, .site-title, .site-subtitle, .post-title, .post-content {
+    font-family: var(--font-family-main);
+}
+
+/* 4. 纯净排版优化 (绝不写死颜色，完美兼容深色模式) */
 body {
-    -webkit-font-smoothing: antialiased;    /* 讓字體邊緣在手機和 Mac 上更平滑 */
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.85;                      /* 稍微加寬行距，讀起來不累 */
-    letter-spacing: 0.02em;                 /* 增加一點點字距，更有呼吸感 */
-    color: #1d1d1f;                         /* 蘋果常用的深灰色，比純黑更高級 */
-}
-
-/* 針對標題的額外加強 */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700 !important;
-    margin-top: 1.5em;
-    margin-bottom: 0.8em;
-    color: #000;
-}
-
-/* 程式碼區塊保持等寬字體，避免亂碼 */
-code, pre, kbd, samp {
-    font-family: "JetBrains Mono", "Cascadia Code", "Courier New", monospace !important;
-}
-
-/* 如果有開啟夜間模式，微調字體顏色避免刺眼 */
-[data-mode='dark'] body {
-    color: #d2d2d7;
-    background-color: #101010;
+    line-height: 1.85;
+    letter-spacing: 0.02em;
 }
