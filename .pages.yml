@@ -1,1 +1,60 @@
-yep
+media:
+  input: assets/img/posts
+  output: /img/posts
+
+content:
+  - name: posts
+    label: 文章
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{slug}.md"
+      field: create
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: date
+        label: 发布日期
+        type: date
+        required: true
+      - name: categories
+        label: 分类
+        type: list
+        field:
+          name: category
+          label: 分类
+          type: string
+      - name: tags
+        label: 标签
+        type: list
+        field:
+          name: tag
+          label: 标签
+          type: string
+      - name: image
+        label: 封面图
+        type: object
+        fields:
+          - name: path
+            label: 图片
+            type: file
+            options:
+              media: posts
+              categories: [image]
+          - name: alt
+            label: 图片描述
+            type: string
+      - name: body
+        label: 正文
+        type: rich-text
+
+settings:
+  content:
+    merge: true
