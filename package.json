@@ -1,0 +1,16 @@
+{
+  "name": "kwanlam-sblog",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "cf:deploy": "wrangler pages deploy dist"
+  },
+  "dependencies": {
+    "astro": "^7.0.7",
+    "marked": "^18.0.6"
+  }
+}

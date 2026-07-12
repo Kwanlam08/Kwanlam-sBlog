@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate, getPosts, readingTime, renderMarkdown } from '../../lib/posts.js';
+
+export function getStaticPaths() {
+  return getPosts().map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+---
+<BaseLayout title={`${post.title} · KwanLam's Daily`} description={post.body.slice(0, 150)}>
+  <article class="article-shell">
+    <a class="back-link" href="/">← 返回记录</a>
+    <header class="article-header">
+      <p class="post-kicker">{post.categories.join(' / ') || '日常'} <span>·</span> {formatDate(post.date)}</p>
+      <h1>{post.title}</h1>
+      <div class="article-meta"><span>{readingTime(post.body)} 分钟阅读</span><span>{post.tags.map((tag) => `#${tag}`).join('  ')}</span></div>
+    </header>
+    {post.image && <figure class="article-cover"><img src={post.image} alt="" /></figure>}
+    <div class="article-body" set:html={renderMarkdown(post.body)} />
+  </article>
+</BaseLayout>

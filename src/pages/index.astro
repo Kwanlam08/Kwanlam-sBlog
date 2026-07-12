@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate, getPosts, readingTime } from '../lib/posts.js';
+
+const posts = getPosts();
+const featured = posts[0];
+const latest = posts.slice(1);
+const categories = [...new Set(posts.flatMap((post) => post.categories))];
+---
+<BaseLayout>
+  <section class="hero-shell">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">PERSONAL ARCHIVE · 2026</p>
+      <h1>把日子里<br /><em>微小的光</em><br />收集起来。</h1>
+      <p class="hero-intro">这里存放生活、学习与偶尔浮现的想法。不是为了追赶时间，而是为了在回望时，仍能认出自己。</p>
+      <div class="hero-meta"><span class="pulse"></span>持续记录中</div>
+    </div>
+    <div class="hero-orbit reveal" aria-hidden="true">
+      <div class="orb orb-one"></div><div class="orb orb-two"></div><div class="orbit-line"></div>
+      <span class="orbit-label">KWANLAM<br />DAILY</span>
+    </div>
+  </section>
+
+  {featured && <section class="feature-section reveal">
+    <div class="section-label"><span>01</span><p>最新一篇</p></div>
+    <a class="feature-card" href={`/posts/${encodeURIComponent(featured.slug)}`}>
+      <div class="feature-image">
+        {featured.image ? <img src={featured.image} alt="" /> : <div class="image-fallback"></div>}
+      </div>
+      <div class="feature-content">
+        <div class="post-kicker">{featured.categories[0] || '随笔'} <span>·</span> {formatDate(featured.date)}</div>
+        <h2>{featured.title}</h2>
+        <p>{featured.body.replace(/[#*_!\[\]]/g, '').trim().slice(0, 118)}…</p>
+        <span class="text-link">进入阅读 <b>↗</b></span>
+      </div>
+    </a>
+  </section>}
+
+  <section class="journal-section reveal">
+    <div class="section-heading"><div class="section-label"><span>02</span><p>近期记录</p></div><a class="quiet-link" href="/archive">查看归档 ↗</a></div>
+    <div class="post-list">
+      {latest.map((post, index) => <a class="post-row" href={`/posts/${encodeURIComponent(post.slug)}`}>
+        <span class="post-number">0{index + 1}</span>
+        <div><p class="post-kicker">{post.categories[0] || '日常'} · {formatDate(post.date)}</p><h3>{post.title}</h3></div>
+        <span class="post-duration">{readingTime(post.body)} MIN</span>
+        <span class="post-arrow">↗</span>
+      </a>)}
+    </div>
+  </section>
+
+  <section class="category-section reveal">
+    <div class="section-label"><span>03</span><p>写作主题</p></div>
+    <div class="category-grid">{categories.map((category, index) => <div class="category-card"><span>0{index + 1}</span><h3>{category}</h3><p>{posts.filter((post) => post.categories.includes(category)).length} 篇记录</p></div>)}</div>
+  </section>
+</BaseLayout>

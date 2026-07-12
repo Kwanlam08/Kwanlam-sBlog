@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate, getPosts } from '../lib/posts.js';
+const posts = getPosts();
+---
+<BaseLayout title="归档 · KwanLam's Daily">
+  <section class="archive-shell"><p class="eyebrow">THE ARCHIVE</p><h1>所有记录</h1><p class="archive-lead">把散落的日子，按时间慢慢归档。</p>
+  <div class="archive-list">{posts.map((post) => <a href={`/posts/${encodeURIComponent(post.slug)}`}><span>{formatDate(post.date)}</span><strong>{post.title}</strong><i>{post.categories[0] || '日常'} ↗</i></a>)}</div></section>
+</BaseLayout>

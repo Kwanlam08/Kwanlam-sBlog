@@ -1,0 +1,31 @@
+# 发布前，将 base_url 替换为你自己部署的 Cloudflare OAuth Worker 地址。
+# Worker 负责 GitHub 登录回调；文章保存后会提交 main 分支，Cloudflare Pages 自动重建。
+backend:
+  name: github
+  repo: Kwanlam08/Kwanlam-sBlog
+  branch: main
+  base_url: https://kwanlam-cms-auth.junlinwu0811.workers.dev
+  auth_endpoint: /auth
+
+media_folder: "assets/img/posts"
+public_folder: "/img/posts"
+
+collections:
+  - name: posts
+    label: 文章
+    folder: _posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime }
+      - { label: 分类, name: categories, widget: list, default: [生活, 随笔] }
+      - { label: 标签, name: tags, widget: list, default: [日常] }
+      - label: 封面图
+        name: image
+        widget: object
+        required: false
+        fields:
+          - { label: 图片, name: path, widget: image, required: false }
+          - { label: 替代文字, name: alt, widget: string, required: false }
+      - { label: 正文, name: body, widget: markdown }
