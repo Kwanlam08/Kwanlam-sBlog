@@ -1,6 +1,9 @@
 media:
-  input: assets/img/posts
-  output: /img/posts
+  - name: posts
+    label: 文章图片
+    input: assets/img/posts
+    output: /img/posts
+    categories: [image]
 
 content:
   - name: posts
@@ -54,6 +57,10 @@ content:
       - name: body
         label: 正文
         type: rich-text
+        options:
+          media: posts
+          path: assets/img/posts
+          categories: [image]
 
 settings:
   content:
