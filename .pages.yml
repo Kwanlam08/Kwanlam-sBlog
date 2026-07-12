@@ -58,9 +58,12 @@ content:
         label: 正文
         type: rich-text
         options:
+          format: markdown
           media: posts
           path: assets/img/posts
           categories: [image]
+          rename: safe
+          switcher: true
 
 settings:
   content:
